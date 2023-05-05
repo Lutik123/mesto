@@ -6,3 +6,8 @@
       max-width: 103.75px;
     }
   }
+  @media screen and (max-width: 980px) {
+    .header__logo{
+      margin-left: 27px;
+    }
+  }
