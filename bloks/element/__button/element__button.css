@@ -1,0 +1,19 @@
+.element__button{
+    background-image: url(../../../images/button3.svg);
+    background-color: #FFFFFF;
+    cursor: pointer;
+    width: 22px;
+    height: 19px;
+    align-self: center;
+    padding: 0px;
+    border: 0px;
+
+}
+
+.element__button:hover{
+    opacity: 0.5;
+}
+.element__button:active{
+  opacity: 1;
+  background-image: url(../../../images/Union.svg);
+}
