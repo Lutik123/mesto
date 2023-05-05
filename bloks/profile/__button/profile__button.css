@@ -8,8 +8,8 @@
     background-image: url(../../../images/button1.svg);
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer; 
-    transition: 2s;  
+    cursor: pointer;
+    transition: 2s;
 }
 .profile__button:hover{
   opacity: 0.6;
