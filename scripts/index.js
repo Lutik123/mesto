@@ -1,30 +1,27 @@
-const popupOpenButton = document.querySelector ('.profile__popup-open');
+const popupOpenButton = document.querySelector ('.profile__button-edit');
 const popup = document.querySelector ('.popup');
 const popupCloseButton = document.querySelector ('.popup__close');
-
-const togglePopupState = (popupToToggle) => popupToToggle.classList.toggle('popup__opened')
-
-popupOpenButton.addEventListener('click', () => togglePopupState(popup));
-
-popupCloseButton.addEventListener('click', () => togglePopupState(popup));
-
-popup.addEventListener('click', (evt) => { 
-    if (evt.target===evt.currentTarget){
-        togglePopupState(popup);
-    } 
-});
-
-const popupName = document.querySelector('.popup__input-name');
-const popupHoby = document.querySelector('.popup__input-hoby');
+const popupName = document.querySelector('.popup__input_name');
+const popupHoby = document.querySelector('.popup__input_hoby');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
-popupName.value = profileTitle.textContent;
-popupHoby.value = profileSubtitle.textContent;
-function fillForm (event){
+const togglePopupState = (popupToToggle) => popupToToggle.classList.toggle('popup__opened')
+   
+function popupOpen () {
+    togglePopupState(popup);
+    popupName.value = profileTitle.textContent;
+    popupHoby.value = profileSubtitle.textContent;
+}
+function fillForm (event) {
     event.preventDefault();
     profileTitle.textContent = popupName.value;
-    profileSubtitle.textContent = popupHoby.value;  
+    profileSubtitle.textContent = popupHoby.value;
+    togglePopupState(popup)
 }
+popupCloseButton.addEventListener('click', () => togglePopupState(popup));
 document.querySelector('.popup__form').addEventListener('submit',fillForm);
-addEventListener('submit',() =>togglePopupState(popup));
+popupOpenButton.addEventListener('click', popupOpen);
+
+
+

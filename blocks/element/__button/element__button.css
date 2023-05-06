@@ -1,0 +1,20 @@
+.element__button{
+    background-image: url(../../../images/Vectorlike.svg);
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    width: 22px;
+    height: 19px;
+    align-self: center;
+    padding: 0px;
+    border: 0px;
+    
+
+}
+
+.element__button:hover{
+    opacity: 0.5;
+}
+.element__button:active{
+  opacity: 1;
+  background-image: url(../../../images/Union.svg);
+}
