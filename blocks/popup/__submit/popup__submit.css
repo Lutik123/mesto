@@ -7,10 +7,11 @@
     line-height: 22px;
     text-align: center;
     color: #FFFFFF;
-    max-width: 358px;
+    width: 358px;
     height: 50px;
     background: #000000;
     border-radius: 2px;
+    cursor: pointer;
     }
     .popup__submit:hover{
       opacity: 0.8;
