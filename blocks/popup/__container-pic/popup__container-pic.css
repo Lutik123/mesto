@@ -1,7 +1,7 @@
 .popup__container-pic{
     
     max-width: 816px;
-    height: 540px;  
+    height: 540px; 
     z-index: 1;
     position: relative;
     box-sizing: border-box;
