@@ -26,54 +26,25 @@
                     <button class="profile__add-button" type="button"></button>
                 </section>
                 <section class="elements">
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" />
-                        <div class="element__group">
-                            <h2 class="element__title">Карачаевск</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" />
-                        <div class="element__group">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1556355-unsplash.png" alt="Домбай" />
-                        <div class="element__group">
-                            <h2 class="element__title">Домбай</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" />
-                        <div class="element__group">
-                            <h2 class="element__title">Карачаевск Тест</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" />
-                        <div class="element__group">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <img class="element__image" src="images/kirill-pershin-1556355-unsplash.png" alt="Домбай" />
-                        <div class="element__group">
-                            <h2 class="element__title">Домбай</h2>
-                            <button class="element__button" type="button"></button>
-                        </div>
-                    </div>
+
+
                 </section>
             </main>
             <footer class="footer">
                 <p class="footer__copyright">&copy; Александр Губа</p>
             </footer>
-            <div class="popup">
+            <template id="template-cards">
+                <div class="element">
+                    <img class="element__image">
+                    <div class="element__group">
+                        <h2 class="element__title"></h2>
+                        <button class="element__button" type="button"></button>
+                    </div>
+                    <button class="element__button-trash" type="button"></button>
+                </div>
+            </template>
+
+            <div class="popup ">
                 <div class="popup__container">
                     <button  class="popup__close" type="button"></button>
                         <form class="popup__form" name="profile">
@@ -82,6 +53,24 @@
                             <input class="popup__input popup__input_theme_hoby" type="text" name="hoby" placeholder="Обо мне" />
                             <button class="popup__submit" type="submit">Сохранить</button>
                         </form>
+                </div>
+            </div>
+            <div class="popup popup_new-form">
+                <div class="popup__container">
+                    <button  class="popup__close popup_new-form_close" type="button"></button>
+                        <form class="popup__form popup__form_new-pic" name="profile">
+                            <h2 class="popup__title">Новое место</h2>
+                            <input class="popup__input popup__input_theme_name-pic" type="text" name="name-pic" placeholder="Название"/>
+                            <input class="popup__input popup__input_theme_pic" type="text" name="pic" placeholder="Ссылка на картинку" />
+                            <button class="popup__submit popup__submit_new-form" type="submit">Сохранить</button>
+                        </form>
+                </div>
+            </div>
+            <div class="popup popup_pic">
+                <div class="popup__container-pic">
+                    <button  class="popup__close popup_pic-close" type="button"></button>
+                        <img src="#" alt="#" class="popup__image">
+                        <h2 class="popup__title-pic"></h2>
                 </div>
             </div>
         </div>
