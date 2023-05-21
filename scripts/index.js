@@ -33,9 +33,9 @@ const popupHoby = document.querySelector('.popup__input_theme_hoby');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const popupOpenButtonPlus = document.querySelector('.profile__add-button');
-const popupNewPlace = document.querySelector('.popup_new-form');
-const newFormClose = document.querySelector('.popup_new-form_close');
-const popupFormNewPic = document.querySelector('.popup__form_new-pic');
+const popupNewPlace = document.querySelector('.popup_new_form');
+const newFormClose = document.querySelector('.popup__close_new_form');
+const popupFormNewPic = document.querySelector('.popup__form_new_pic');
 const cardsContainer =  document.querySelector('.elements');
 const cardsTamplate = document.querySelector('#template-cards').content;
 const cardTemplate = cardsTamplate.querySelector('.element');
@@ -60,7 +60,7 @@ popupOpenButton.addEventListener('click', popupOpen);
 
 popupOpenButtonPlus.addEventListener('click', popupOpenNewPlace);
 newFormClose.addEventListener('click',popupOpenNewPlace);
-document.querySelector('.popup__form_new-pic').addEventListener('submit',fillFormPic);
+document.querySelector('.popup__form_new_pic').addEventListener('submit',fillFormPic);
 
 function popupOpenNewPlace () {
   popupInputThemeNamePic.value = '';
@@ -111,7 +111,7 @@ function fillFormPic (evt){
   const popupImageOpen = document.querySelector('.element__image');
   const popupPic = document.querySelector('.popup_pic');
   const popupImage = document.querySelector('.popup__image');
-  const popupPicClose = document.querySelector('.popup_pic-close');
+  const popupPicClose = document.querySelector('.popup__close_theme_pic');
 
   popupPicClose.addEventListener('click',popupClosePic);
 
