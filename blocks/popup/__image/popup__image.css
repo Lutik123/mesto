@@ -1,13 +1,19 @@
 .popup__image{
-    width: 815px;
-    height: 100%;
-    object-fit: cover;
-    box-sizing: border-box;
+height: 540px;
+object-fit: cover;
+object-position: center;
+width: 100%;
 }
-
+@media screen and (max-width: 900px) {
+    .popup__image{
+        max-width: 600px;
+        height: 540px;
+    }
+      
+}
 @media screen and (max-width: 680px) {
     .popup__image{
-        width: 433px;
+        
         height: 540px;
     }
       
@@ -15,7 +21,7 @@
 
 @media screen and (max-width: 400px) {
     .popup__image{
-        width: 280px;
+        
         height: 240px;
     }
       

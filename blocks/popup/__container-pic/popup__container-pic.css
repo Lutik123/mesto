@@ -1,11 +1,18 @@
 .popup__container-pic{
-    max-width: 816px;
+    max-width: 815px;
     height: 540px;
     z-index: 1;
     position: relative;
-    box-sizing: border-box;
     align-self: center;
     
+    
+}
+@media screen and (max-width: 900px) {
+    .popup__container-pic{
+        max-width: 600px;
+        height: 540px;
+    }
+      
 }
 @media screen and (max-width: 680px) {
     .popup__container-pic{
@@ -17,8 +24,8 @@
 
 @media screen and (max-width: 400px) {
     .popup__container-pic{
-        max-width: 280px;
-        height: 240px;
+        max-width: 240px;
+        height: 299px;
     }
       
 }

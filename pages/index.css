@@ -41,6 +41,7 @@
 @import url(../blocks/popup/__container-pic/popup__container-pic.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__title-pic/popup__title-pic.css);
+@import url(../blocks/popup_pic/popup_pic.css);
 
 @import url(../blocks/popup-new-place/popup-new-place.css);
 
