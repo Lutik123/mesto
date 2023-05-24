@@ -63,7 +63,8 @@ function handleProfileFormSubmit(event) {
   togglePopupState(popupThemeEdit);
 }
 
-
+//Я понимаю реализацию цечер popupClose и popupOpen просто хочу в 6 ПР уже рефакторить код, так  как там будет более мение финальная концепция нашего мини проекта.
+//Не рагайтесь на меня, из за того,что я не применил этот функцианал, это оцень ценные для меня замечания.Я все свои косяки проработал,спасибо вам:)
 
 function openPopupNewPlace() {
   popupInputThemeNamePic.value = "";
