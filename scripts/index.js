@@ -37,7 +37,7 @@ const popupNewPlace = document.querySelector(".popup_new_form");
 const popupCloseButtonFormPic = document.querySelector(".popup__close_new_form");
 const cardsContainer = document.querySelector(".elements");
 const cardsTemplate = document.querySelector("#template-cards").content;
-const popopFormEdit = document.querySelector(".popup__form_theme_edit");
+const popupFormEdit = document.querySelector(".popup__form_theme_edit");
 const popupFormNewPic = document.querySelector(".popup__form_new_pic");
 const popupInputThemeNamePic = document.querySelector(".popup__input_theme_name-pic");
 const popupInputThemePic = document.querySelector(".popup__input_theme_pic");
@@ -83,13 +83,13 @@ function handleCardFormSubmit(evt) {
   togglePopupState(popupNewPlace);
 }
 //удвление элемента
-const deleteCard = (evt) => {
+const handleLikeClick = (evt) => {
 
   const item = evt.target.closest(".element");
 
   item.remove();
 };
-const likeItem = (evt) => {
+const likeCard = (evt) => {
 
   evt.target.classList.toggle("element__button-active");
 };
@@ -105,8 +105,8 @@ function createCard(link, name) {
   elementImage.alt = name;
 
   cardElement.querySelector(".element__title").textContent = name;
-  cardElement.querySelector(".element__button-trash").addEventListener("click", deleteCard);
-  cardElement.querySelector(".element__button").addEventListener("click", likeItem);
+  cardElement.querySelector(".element__button-trash").addEventListener("click", handleLikeClick);
+  cardElement.querySelector(".element__button").addEventListener("click", likeCard);
 
     elementImage.addEventListener("click", function () {
       togglePopupState(popupPic);
@@ -126,16 +126,17 @@ initialCards.forEach((card) => {
 
 });
 
-function popupClosePic() {
+function closePicturePopup() {
   togglePopupState(popupPic);
 }
 
-popupPicClose.addEventListener("click", popupClosePic);
+popupPicClose.addEventListener("click", closePicturePopup);
 popupCloseButtonEdit.addEventListener("click", () =>
   togglePopupState(popupThemeEdit)
 );
-popopFormEdit.addEventListener("submit", handleProfileFormSubmit);
+popupFormEdit.addEventListener("submit", handleProfileFormSubmit);
 popupOpenButtonEdit.addEventListener("click", openProfilePopup);
 buttonOpenAddPlacePopup.addEventListener("click", openPopupNewPlace);
-popupCloseButtonFormPic.addEventListener("click", openPopupNewPlace);
+popupCloseButtonFormPic.addEventListener("click", () =>
+ togglePopupState(popupNewPlace));
 popupFormNewPic.addEventListener("submit", handleCardFormSubmit);

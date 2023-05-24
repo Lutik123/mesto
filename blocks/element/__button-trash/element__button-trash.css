@@ -10,4 +10,10 @@
     right: 20px;
     width: 18px;
     height: 19px;
+    opacity: 1;
+    transition: 1s;
+}
+.element__button-trash:hover{
+    opacity: 0.6;
+    transition: 1s;
 }
