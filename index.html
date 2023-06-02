@@ -47,22 +47,30 @@
             <div class="popup popup_theme_edit">
                 <div class="popup__container">
                     <button  class="popup__close" type="button"></button>
-                        <form class="popup__form popup__form_theme_edit" name="profile">
+                        <form class="popup__form popup__form_theme_edit" name="profile" novalidate>
+                        
                             <h2 class="popup__title">Редактировать профиль</h2>
-                            <input class="popup__input popup__input_theme_name" type="text" name="name" placeholder="Имя Фамилия" />
-                            <input class="popup__input popup__input_theme_hoby" type="text" name="hoby" placeholder="Обо мне" />
+                            <input class="popup__input popup__input_theme_name" type="text" id="name-profile" name="name" minlength="2" maxlength="40" placeholder="Имя Фамилия" required/>
+                            <span id="name-profile-error" class="popup__error"></span>
+                            <input class="popup__input popup__input_theme_hoby" type="text" id="hoby-profile" name="hoby" minlength="2" maxlength="200" placeholder="Обо мне" required/>
+                            <span id="hoby-profile-error" class="popup__error"></span>
                             <button class="popup__submit" type="submit">Сохранить</button>
+                        
                         </form>
                 </div>
             </div>
             <div class="popup popup_new_form">
                 <div class="popup__container">
                     <button  class="popup__close popup__close_new_form" type="button"></button>
-                        <form class="popup__form popup__form_new_pic" name="profile">
+                        <form class="popup__form popup__form_new_pic" name="newPic" novalidate>
+                        
                             <h2 class="popup__title">Новое место</h2>
-                            <input class="popup__input popup__input_theme_name-pic" type="text" name="name-pic" placeholder="Название"/>
-                            <input class="popup__input popup__input_theme_pic" type="text" name="pic" placeholder="Ссылка на картинку" />
-                            <button class="popup__submit" type="submit">Сохранить</button>
+                            <input class="popup__input popup__input_theme_name-pic" type="text" id="name-pict" name="name-pict" minlength="2" maxlength="30"placeholder="Название" required/>
+                            <span id="name-pict-error" class="popup__error"></span>
+                            <input class="popup__input popup__input_theme_pic" type="url" id="pic" name="pic" placeholder="Ссылка на картинку" required/>
+                            <span id="pic-error" class="popup__error"></span>
+                            <button class="popup__submit popup__submit_invalid" type="submit" >Сохранить</button>
+                        
                         </form>
                 </div>
             </div>
@@ -74,6 +82,8 @@
                 </div>
             </div>
         </div>
+        <script src="scripts/form.js"></script>
         <script src="scripts/index.js"></script>
+        
     </body>
 </html>
