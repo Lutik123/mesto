@@ -47,7 +47,7 @@ const popupPic = document.querySelector(".popup_pic");
 const popupImage = document.querySelector(".popup__image"); 
 const popupPicClose = document.querySelector(".popup__close_theme_pic"); 
 const popup = document.querySelectorAll(".popup");
-
+const popupMistake = document.querySelectorAll('.popup__error')
 
 function openPopup (openPopup) {
   openPopup.classList.add("popup_opened");
@@ -55,6 +55,9 @@ function openPopup (openPopup) {
 }
 function closePopup (closePopup) {
   closePopup.classList.remove("popup_opened");
+  popupMistake.forEach(function(mistake){
+   mistake.textContent = '';
+  });
 }
  
 function openProfilePopup () { 
