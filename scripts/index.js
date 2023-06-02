@@ -62,7 +62,9 @@ function openProfilePopup () {
   inputName.value = profileTitle.textContent; 
   inputHoby.value = profileSubtitle.textContent; 
 
-} 
+}
+//Уважаемое ревью, так и не понял, как реализовать серую кнопку при повторном сабмите новой карточки(сейчас она изначально серая, а потом красится не смотря на то, что поля пустые)
+//Очень прошу направить на путь истиный, идей 0
  
 function handleProfileFormSubmit(event) { 
   event.preventDefault (); 
