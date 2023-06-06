@@ -46,28 +46,36 @@ const popupImageOpen = document.querySelector(".element__image");
 const popupPic = document.querySelector(".popup_pic"); 
 const popupImage = document.querySelector(".popup__image"); 
 const popupPicClose = document.querySelector(".popup__close_theme_pic"); 
-const popup = document.querySelectorAll(".popup");
-const popupMistake = document.querySelectorAll('.popup__error')
+const popups = document.querySelectorAll(".popup");
+const popupMistakes = document.querySelectorAll('.popup__error')
+const popupInputTypeErrors = document.querySelectorAll('.popup__input');
+const buttonsSubmit = document.querySelectorAll('.popup__submit');
+const closeButtons = document.querySelectorAll('.popup__close');
 
 function openPopup (openPopup) {
   openPopup.classList.add("popup_opened");
-  document.addEventListener('keydown',ecsClosePopup);
+  document.addEventListener('keydown',closeByEscape);
 }
 function closePopup (closePopup) {
   closePopup.classList.remove("popup_opened");
-  popupMistake.forEach(function(mistake){
-   mistake.textContent = '';
+  document.removeEventListener('keydown', closeByEscape);
+  cleerMistake(popupMistakes,popupInputTypeErrors);
+}
+function cleerMistake (Mistakes,popupInputTypeErr) {
+  
+  Mistakes.forEach(function(mistake){
+    mistake.textContent = '';
+  });
+  popupInputTypeErr.forEach(function (inputMistakes){
+    inputMistakes.classList.remove('popup__input_type_error')
   });
 }
- 
 function openProfilePopup () { 
   openPopup(popupThemeEdit);
   inputName.value = profileTitle.textContent; 
   inputHoby.value = profileSubtitle.textContent; 
 
 }
-//Уважаемое ревью, так и не понял, как реализовать серую кнопку при повторном сабмите новой карточки(сейчас она изначально серая, а потом красится не смотря на то, что поля пустые)
-//Очень прошу направить на путь истиный, идей 0
  
 function handleProfileFormSubmit(event) { 
   event.preventDefault (); 
@@ -80,6 +88,11 @@ function openPopupNewPlace() {
   popupInputThemeNamePic.value = ""; 
   popupInputThemePic.value = "";  
   openPopup(popupNewPlace);
+  buttonsSubmit.forEach(function(buttonChange){
+    buttonChange.setAttribute('disabled',true);
+    buttonChange.classList.add('popup__submit_invalid');
+  });
+
 } 
  
 function handleCardFormSubmit(evt) { 
@@ -136,31 +149,37 @@ initialCards.forEach((card) => {
   cardsContainer.append(elementDesc); 
  
 }); 
- 
- 
-popupPicClose.addEventListener("click", () => 
-  closePopup(popupPic)
-); 
-popupCloseButtonEdit.addEventListener("click", () => 
- 
-  closePopup(popupThemeEdit)
-); 
-popupCloseButtonFormPic.addEventListener("click", () => 
 
- closePopup(popupNewPlace)
- );
- popup.forEach(function(popupClose){
+
+closeButtons.forEach((button) => {
+
+  const popup = button.closest('.popup');
+
+  button.addEventListener('click', () => closePopup(popup));
+});
+ 
+//popupPicClose.addEventListener("click", () => 
+ // closePopup(popupPic)
+//); 
+//popupCloseButtonEdit.addEventListener("click", () => 
+ 
+ // closePopup(popupThemeEdit)
+//); 
+//popupCloseButtonFormPic.addEventListener("click", () => 
+
+ //closePopup(popupNewPlace)
+ //);
+ popups.forEach(function(popupClose){
   popupClose.addEventListener('click',(evt) => {
     if (evt.target === evt.currentTarget) {
-      popupClose.classList.remove('popup_opened')
+      closePopup(popupClose);
     }
   })
 });
-const ecsClosePopup = function (e) {
-  if (e.key === 'Escape') {
-    closePopup(popupThemeEdit);
-    closePopup(popupNewPlace);
-    closePopup(popupPic);
+ function closeByEscape (evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
 };
 popupFormEdit.addEventListener("submit", handleProfileFormSubmit); 
