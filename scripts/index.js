@@ -59,7 +59,6 @@ function openPopup (openPopup) {
 function closePopup (closePopup) {
   closePopup.classList.remove("popup_opened");
   document.removeEventListener('keydown', closeByEscape);
-  cleerMistake(popupMistakes,popupInputTypeErrors);
 }
 function cleerMistake (Mistakes,popupInputTypeErr) {
   
@@ -74,7 +73,7 @@ function openProfilePopup () {
   openPopup(popupThemeEdit);
   inputName.value = profileTitle.textContent; 
   inputHoby.value = profileSubtitle.textContent; 
-
+  cleerMistake(popupMistakes,popupInputTypeErrors);
 }
  
 function handleProfileFormSubmit(event) { 
@@ -88,6 +87,7 @@ function openPopupNewPlace() {
   popupInputThemeNamePic.value = ""; 
   popupInputThemePic.value = "";  
   openPopup(popupNewPlace);
+  cleerMistake(popupMistakes,popupInputTypeErrors);
   buttonsSubmit.forEach(function(buttonChange){
     buttonChange.setAttribute('disabled',true);
     buttonChange.classList.add('popup__submit_invalid');
@@ -157,22 +157,24 @@ closeButtons.forEach((button) => {
 
   button.addEventListener('click', () => closePopup(popup));
 });
+/* 
+popupPicClose.addEventListener("click", () => 
+ closePopup(popupPic)
+); 
+popupCloseButtonEdit.addEventListener("click", () => 
  
-//popupPicClose.addEventListener("click", () => 
- // closePopup(popupPic)
-//); 
-//popupCloseButtonEdit.addEventListener("click", () => 
- 
- // closePopup(popupThemeEdit)
-//); 
-//popupCloseButtonFormPic.addEventListener("click", () => 
+  closePopup(popupThemeEdit)
+); 
+popupCloseButtonFormPic.addEventListener("click", () => 
 
- //closePopup(popupNewPlace)
- //);
+ closePopup(popupNewPlace)
+ );
+ */
  popups.forEach(function(popupClose){
   popupClose.addEventListener('click',(evt) => {
     if (evt.target === evt.currentTarget) {
       closePopup(popupClose);
+      cleerMistake(popupMistakes,popupInputTypeErrors);
     }
   })
 });
@@ -180,6 +182,7 @@ closeButtons.forEach((button) => {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
+    cleerMistake(popupMistakes,popupInputTypeErrors);
   }
 };
 popupFormEdit.addEventListener("submit", handleProfileFormSubmit); 
