@@ -37,15 +37,21 @@ class Card {
         this._showPicture(this._name,this._link);
        // this._opemImage(this._name,this._link);
     }
+    _elementRemove () {
+        this._element.remove();
+    }
+    _likeButtons () {
+        this._likeButton.classList.toggle('element__button-active');
+    }
     _setEventListeners() {
         this._pic.addEventListener('click', () => {
             this._hendelOpenPopup();
         });
         this._trashButton.addEventListener('click', () => {
-            this._element.remove();
+            this._elementRemove();
         });
         this._likeButton.addEventListener('click', () => {
-            this._likeButton.classList.toggle('element__button-active');
+             this._likeButtons();
         })
     }
 }
