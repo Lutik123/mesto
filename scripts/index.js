@@ -38,9 +38,9 @@ const popupTitlePic = document.querySelector(".popup__title-pic");
 
 const formEditValidator = new FormValidator(obj, popupFormEdit);
 formEditValidator.enableValidation();
-const FormNewPicValidator = new FormValidator(obj, popupFormNewPic);
+const formNewPicValidator = new FormValidator(obj, popupFormNewPic);
 
-FormNewPicValidator.enableValidation();
+formNewPicValidator.enableValidation();
 
 function openPopup(openPopup) {
   openPopup.classList.add("popup_opened");
@@ -81,12 +81,8 @@ function openPopupNewPlace() {
   popupFormNewPic.reset();
   openPopup(popupNewPlace);
   // cleerMistake(popupMistakes,popupInputTypeErrors);
-  buttonsSubmit.forEach(function (buttonChange) {
-    buttonChange.setAttribute("disabled", true);
-    buttonChange.classList.add("popup__submit_invalid");
-  });
-  FormNewPicValidator.cleerMistake();
-  FormNewPicValidator.toggleButtonState();
+  formNewPicValidator.cleerMistake();
+  formNewPicValidator.toggleButtonState();
 }
 
 function handleCardFormSubmit(evt) {

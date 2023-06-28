@@ -1,0 +1,19 @@
+{
+  "name": "yandex_praktikum",
+  "version": "0.0.1",
+  "description": "Проект Место\r Карточки с фотографиями (Возможность редактировать профиль,загружать свои фоткиблайкать удалять)\r flex, grid, БЭМ, Адаптивная верстка,java script,ООП\r * Figma\r * Картинки",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lutik123/mesto.git"
+  },
+  "author": "Alexandr Guba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lutik123/mesto/issues"
+  },
+  "homepage": "https://github.com/Lutik123/mesto#readme"
+}

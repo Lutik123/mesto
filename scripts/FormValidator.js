@@ -60,10 +60,7 @@
   }
   cleerMistake () {
    this._inputList.forEach((inputElement) => {
-    inputElement.classList.remove(this._formObj._inputErrorClass);
-    const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = '';
-    errorElement.classList.remove(this._formObj._errorClass);
+    this._hideInputError(inputElement,inputElement.validationMessage);
    })
    
   }
